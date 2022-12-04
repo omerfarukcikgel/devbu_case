@@ -9,9 +9,8 @@ part of 'article_viewmodel.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$ArticleViewModel on _ArticleViewModelBase, Store {
-  final _$articlesAtom = Atom(
-    name: '_ArticleViewModelBase.articles',
-  );
+  late final _$articlesAtom =
+      Atom(name: '_ArticleViewModelBase.articles', context: context);
 
   @override
   List<Article> get articles {
@@ -26,9 +25,8 @@ mixin _$ArticleViewModel on _ArticleViewModelBase, Store {
     });
   }
 
-  final _$favoriteArticlesAtom = Atom(
-    name: '_ArticleViewModelBase.favoriteArticles',
-  );
+  late final _$favoriteArticlesAtom =
+      Atom(name: '_ArticleViewModelBase.favoriteArticles', context: context);
 
   @override
   List<Article> get favoriteArticles {
@@ -43,9 +41,8 @@ mixin _$ArticleViewModel on _ArticleViewModelBase, Store {
     });
   }
 
-  final _$selectedIndexAtom = Atom(
-    name: '_ArticleViewModelBase.selectedIndex',
-  );
+  late final _$selectedIndexAtom =
+      Atom(name: '_ArticleViewModelBase.selectedIndex', context: context);
 
   @override
   int get selectedIndex {
@@ -60,9 +57,7 @@ mixin _$ArticleViewModel on _ArticleViewModelBase, Store {
     });
   }
 
-  final _$qAtom = Atom(
-    name: '_ArticleViewModelBase.q',
-  );
+  late final _$qAtom = Atom(name: '_ArticleViewModelBase.q', context: context);
 
   @override
   String get q {
@@ -77,27 +72,25 @@ mixin _$ArticleViewModel on _ArticleViewModelBase, Store {
     });
   }
 
-  final _$textEditingControllerAtom = Atom(
-    name: '_ArticleViewModelBase.textEditingController',
-  );
+  late final _$textEditingControllerAtom = Atom(
+      name: '_ArticleViewModelBase.textEditingController', context: context);
 
   @override
-  TextEditingController get textEditingController {
+  TextEditingController? get textEditingController {
     _$textEditingControllerAtom.reportRead();
     return super.textEditingController;
   }
 
   @override
-  set textEditingController(TextEditingController value) {
+  set textEditingController(TextEditingController? value) {
     _$textEditingControllerAtom.reportWrite(value, super.textEditingController,
         () {
       super.textEditingController = value;
     });
   }
 
-  final _$selectedFavIndexAtom = Atom(
-    name: '_ArticleViewModelBase.selectedFavIndex',
-  );
+  late final _$selectedFavIndexAtom =
+      Atom(name: '_ArticleViewModelBase.selectedFavIndex', context: context);
 
   @override
   List<int> get selectedFavIndex {
@@ -112,18 +105,16 @@ mixin _$ArticleViewModel on _ArticleViewModelBase, Store {
     });
   }
 
-  final _$getArticleAsyncAction = AsyncAction(
-    '_ArticleViewModelBase.getArticle',
-  );
+  late final _$getArticleAsyncAction =
+      AsyncAction('_ArticleViewModelBase.getArticle', context: context);
 
   @override
-  Future<List<Article>> getArticle() {
+  Future<List<Article>?> getArticle() {
     return _$getArticleAsyncAction.run(() => super.getArticle());
   }
 
-  final _$_ArticleViewModelBaseActionController = ActionController(
-    name: '_ArticleViewModelBase',
-  );
+  late final _$_ArticleViewModelBaseActionController =
+      ActionController(name: '_ArticleViewModelBase', context: context);
 
   @override
   dynamic fav(Article article) {

@@ -1,10 +1,10 @@
+import 'package:devbu_case/model/article_model.dart';
+import 'package:devbu_case/view/article_view.dart';
+import 'package:devbu_case/view/favorite_article.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:news_api_app/model/article_model.dart';
-import 'package:news_api_app/view/article_view.dart';
-import 'package:news_api_app/view/favorite_article.dart';
 part 'article_viewmodel.g.dart';
 
 class ArticleViewModel = _ArticleViewModelBase with _$ArticleViewModel;
@@ -20,17 +20,17 @@ abstract class _ArticleViewModelBase with Store {
   int selectedIndex = 0;
 
   @observable
-  String q;
+  late String q;
 
   @observable
-  TextEditingController textEditingController;
+  TextEditingController? textEditingController;
 
   final endPointUrl = "newsapi.org";
   final apiKey = '5033ec4516e94d85957b009ddf291508';
   final client = http.Client();
 
   @action
-  Future<List<Article>> getArticle() async {
+  Future<List<Article>?> getArticle() async {
     final queryParameters = {'q': q, 'apiKey': apiKey};
 
     final uri = Uri.https(endPointUrl, '/v2/everything', queryParameters);

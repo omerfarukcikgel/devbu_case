@@ -13,14 +13,14 @@ class Article {
   bool isFavorite = false;
 
   Article(
-      {this.source,
-      this.author,
-      this.title,
-      this.description,
-      this.url,
-      this.urlToImage,
-      this.publishedAt,
-      this.content});
+      {required this.source,
+      required this.author,
+      required this.title,
+      required this.description,
+      required this.url,
+      required this.urlToImage,
+      required this.publishedAt,
+      required this.content});
 
   factory Article.fromJson(Map<String, dynamic> json) {
     return Article(

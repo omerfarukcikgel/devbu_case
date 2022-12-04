@@ -11,14 +11,13 @@ class MyCardWidget extends StatefulWidget {
 
   bool isFavorite;
   MyCardWidget({
-    Key key,
-    this.img,
-    this.publishedAt,
-    this.description,
-    this.title,
-    this.url,
-    this.isFavorite,
-  }) : super(key: key);
+    required this.img,
+    required this.publishedAt,
+    required this.description,
+    required this.title,
+    required this.url,
+    required this.isFavorite,
+  });
 
   @override
   State<MyCardWidget> createState() => _MyCardWidgetState();

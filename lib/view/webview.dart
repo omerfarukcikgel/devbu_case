@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewNews extends StatefulWidget {
-  WebViewNews({Key key}) : super(key: key);
+  WebViewNews({Key? key}) : super(key: key);
 
   @override
   State<WebViewNews> createState() => _WebViewNewsState();
@@ -15,10 +15,10 @@ class _WebViewNewsState extends State<WebViewNews> {
 
   @override
   Widget build(BuildContext context) {
-    final url = ModalRoute.of(context).settings.arguments;
+    final url = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
         body: WebView(
-      initialUrl: url,
+      initialUrl: "${url}",
       javascriptMode: JavascriptMode.unrestricted,
       onWebViewCreated: (WebViewController webViewController) {
         setState(() {

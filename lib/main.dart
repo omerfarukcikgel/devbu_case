@@ -1,5 +1,5 @@
+import 'package:devbu_case/view/home.dart';
 import 'package:flutter/material.dart';
-import 'package:news_api_app/view/home.dart';
 
 void main() {
   runApp(MyApp());

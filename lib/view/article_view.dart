@@ -1,11 +1,11 @@
 import 'dart:async';
+import 'package:devbu_case/view/articles_details_page.dart';
+import 'package:devbu_case/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:news_api_app/view/home.dart';
-import '../pages/articles_details_page.dart';
 
 class ArticleView extends StatelessWidget {
-  ArticleView({Key key}) : super(key: key);
+  ArticleView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class ArticleView extends StatelessWidget {
                       suffixIcon: IconButton(
                         onPressed: () async {
                           await viewModel.getArticle();
-                          viewModel.textEditingController.clear();
+                          viewModel.textEditingController!.clear();
                         },
                         icon: Icon(Icons.search),
                         color: Colors.grey,

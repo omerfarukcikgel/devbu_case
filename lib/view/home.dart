@@ -1,10 +1,10 @@
+import 'package:devbu_case/view/article_view.dart';
+import 'package:devbu_case/view/favorite_article.dart';
+import 'package:devbu_case/viewmodel/article_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:news_api_app/view/article_view.dart';
-import 'package:news_api_app/view/favorite_article.dart';
-import 'package:news_api_app/viewmodel/article_viewmodel.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -13,12 +13,12 @@ class Home extends StatefulWidget {
 final viewModel = ArticleViewModel();
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
-  List<Widget> _widgetOptions = <Widget>[ArticleView(), FavoriteArticleView()];
+  int selectedIndex = 0;
+  List<Widget> widgetOptions = <Widget>[ArticleView(), FavoriteArticleView()];
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: widgetOptions.elementAt(selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
             label: 'Favorite',
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: selectedIndex,
         onTap: _onItemTapped,
       ),
     );
